@@ -1,4 +1,4 @@
-﻿## [Elastic Stack](https://github.com/colaboy2010/ElasticStack/blob/master/README.md) > [Elastic Stack 설치](https://github.com/colaboy2010/ElasticStack/blob/master/Install/README.md) > Kibana 설치
+﻿## [Elastic Stack](https://github.com/colaboy2010hot/ElasticStack/blob/master/README.md) > [Elastic Stack 설치](https://github.com/colaboy2010hot/ElasticStack/blob/master/Install/README.md) > Kibana 설치
 
 ### Kibana 설치
 

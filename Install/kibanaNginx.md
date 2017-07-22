@@ -1,4 +1,4 @@
-﻿## [Elastic Stack](https://github.com/colaboy2010/ElasticStack/blob/master/README.md) > [Elastic Stack 설치](https://github.com/colaboy2010/ElasticStack/blob/master/Install/README.md) > Kibana 인증 설정 with nginx
+﻿## [Elastic Stack](https://github.com/colaboy2010hot/ElasticStack/blob/master/README.md) > [Elastic Stack 설치](https://github.com/colaboy2010hot/ElasticStack/blob/master/Install/README.md) > Kibana 인증 설정 with nginx
 
 ### HTTP Authentication 설정
 

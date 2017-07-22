@@ -1,4 +1,4 @@
-﻿## [Elastic Stack](https://github.com/colaboy2010/ElasticStack/blob/master/README.md) > Elastic Stack 개요
+﻿## [Elastic Stack](https://github.com/colaboy2010hot/ElasticStack/blob/master/README.md) > Elastic Stack 개요
 
 ### ELK
 * Elasticsearch + Logstash + Kibana
