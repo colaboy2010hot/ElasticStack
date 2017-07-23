@@ -81,7 +81,7 @@ drwxr-xr-x 90 root root          4096 Jul 23 16:14 ../
 drwxr-x---  2 root elasticsearch 4096 Jul  1 08:20 scripts/
 ```
 
-* 초기화 스크립트 파일 확인
+* 서비스 초기화 스크립트 파일 확인
 ```
 sudo cat /etc/init.d/elasticsearch
 ```
