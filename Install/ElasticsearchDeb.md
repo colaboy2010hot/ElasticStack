@@ -66,8 +66,6 @@ drwxr-xr-x   2 root root   4096 Jul  1 08:20 plugins/
 -rw-r--r--   1 root root   9548 Jul  1 08:20 README.textile
 ```
 
-
-
 * 설정 디렉터리 확인
 ```
 cd /etc/elasticsearch
@@ -83,8 +81,58 @@ drwxr-xr-x 90 root root          4096 Jul 23 16:14 ../
 drwxr-x---  2 root elasticsearch 4096 Jul  1 08:20 scripts/
 ```
 
-
 * 초기화 스크립트 파일 확인
 ```
 sudo cat /etc/init.d/elasticsearch
+```
+
+* 서비스 자동 실행 설정
+```
+sudo systemctl enable elasticsearch.service
+```
+
+* 서비스 재시작
+```
+sudo systemctl restart elasticsearch.service
+```
+
+* 서비스 상태 확인
+```
+sudo systemctl status elasticsearch.service
+```
+```
+● elasticsearch.service - Elasticsearch
+   Loaded: loaded (/usr/lib/systemd/system/elasticsearch.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2017-07-23 16:38:12 KST; 8s ago
+     Docs: http://www.elastic.co
+  Process: 3530 ExecStartPre=/usr/share/elasticsearch/bin/elasticsearch-systemd-pre-exec (code=exited, status=0/SUCCESS)
+ Main PID: 3534 (java)
+    Tasks: 37
+   Memory: 1.9G
+      CPU: 10.683s
+   CGroup: /system.slice/elasticsearch.service
+           └─3534 /usr/bin/java -Xms2g -Xmx2g -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+Di
+
+Jul 23 16:38:12 ubuntu1 systemd[1]: Starting Elasticsearch...
+Jul 23 16:38:12 ubuntu1 systemd[1]: Started Elasticsearch.
+```
+
+* Elasticsearch 실행 확인
+```
+curl localhost:9200
+```
+```
+{
+  "name" : "3HPjWHY",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "NbDRS5OKQBmDrkdGfSWgig",
+  "version" : {
+    "number" : "5.5.0",
+    "build_hash" : "260387d",
+    "build_date" : "2017-06-30T23:16:05.735Z",
+    "build_snapshot" : false,
+    "lucene_version" : "6.6.0"
+  },
+  "tagline" : "You Know, for Search"
+}
 ```
