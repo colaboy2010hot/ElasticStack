@@ -136,3 +136,80 @@ curl localhost:9200
   "tagline" : "You Know, for Search"
 }
 ```
+
+### Elasticsearch 설정
+
+* 설정 디렉터리 이동
+```
+cd /etc/elasticsearch
+```
+
+* Elasticsearch 서버 설정 파일 확인 - 로깅 옵션을 제외한 모든 옵션이 저장된다.
+```
+cat elasticsearch.yml
+```
+
+* 로깅 설정 파일 확인 - 기본 로깅 옵션을 사용하는 경우에는 파일이 존재하지 않는다.
+```
+cat logging.yml
+```
+
+* 로그 파일 디렉터리 확인
+```
+cd /var/log/elasticsearch
+ll
+```
+```
+total 16
+drwxr-x--- 2 elasticsearch elasticsearch 4096 Jul 24 23:30 ./
+drwxrwxr-x 9 root          syslog        4096 Jul 23 16:07 ../
+-rw-r--r-- 1 elasticsearch elasticsearch 3913 Jul 23 18:22 elasticsearch-2017-07-23.log
+-rw-r--r-- 1 elasticsearch elasticsearch    0 Jul 23 16:38 elasticsearch_deprecation.log
+-rw-r--r-- 1 elasticsearch elasticsearch    0 Jul 23 16:38 elasticsearch_index_indexing_slowlog.log
+-rw-r--r-- 1 elasticsearch elasticsearch    0 Jul 23 16:38 elasticsearch_index_search_slowlog.log
+-rw-r--r-- 1 elasticsearch elasticsearch 3725 Jul 24 23:31 elasticsearch.log
+
+```
+
+* elasticsearch.yml 변수 
+
+변수명       | 명칭              | 기본 값                              | 설명
+------------ | ----------------- | ---------                            |
+node.name    | 노드(서버) 이름   | Droplet 호스트명으로 자동으로 설정   |
+cluster.name | 클러스터 이름     | elasticsearch                        | 클러스터 이름이 동일하면 노드들이 같은 동일한 클러스터로 구성된다.
+셀 3-1       | 셀 3-2
+
+
+* elasticsearch.yml 변수 수정
+```
+sudo vi elasticsearch.yml
+```
+```
+cluster.name: elasticsearch-colaboy
+node.name: colaboy-node-1
+```
+
+* 서비스 재시작
+```
+systemctl restart elasticsearch.service
+```
+
+* 서비스 확인
+```
+curl localhost:9200
+```
+```
+{
+  "name" : "colaboy-node-1",
+  "cluster_name" : "elasticsearch-colaboy",
+  "cluster_uuid" : "NbDRS5OKQBmDrkdGfSWgig",
+  "version" : {
+    "number" : "5.5.0",
+    "build_hash" : "260387d",
+    "build_date" : "2017-06-30T23:16:05.735Z",
+    "build_snapshot" : false,
+    "lucene_version" : "6.6.0"
+  },
+  "tagline" : "You Know, for Search"
+}
+```
