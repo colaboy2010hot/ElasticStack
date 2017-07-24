@@ -172,7 +172,8 @@ drwxrwxr-x 9 root          syslog        4096 Jul 23 16:07 ../
 ```
 
 * elasticsearch.yml 변수 
-<div style="font-size: 11px;">
+ 
+<div style="font-size: 14px;">
 
 변수명                    | 명칭                  | 설명   
 ------------------------- | --------------------- | ----------------------------
