@@ -173,20 +173,21 @@ drwxrwxr-x 9 root          syslog        4096 Jul 23 16:07 ../
 
 * elasticsearch.yml 변수 
 
-변수명       | 명칭              | 기본 값                              | 설명
------------- | ----------------- | ---------                            | ---------------------
-node.name    | 노드(서버) 이름   | Droplet 호스트명으로 자동으로 설정   |
-cluster.name | 클러스터 이름     | elasticsearch                        | 클러스터 이름이 동일하면 노드들이 같은 동일한 클러스터로 구성된다.
-셀 3-1       | 셀 3-2            |                                      |
+변수명       | 명칭              | 설명   
+------------ | ----------------- | ---------  
+node.name    | 노드(서버) 이름   | 기본값은 Droplet 호스트명으로 자동으로 설정
+cluster.name | 클러스터 이름     | 기본값은 "elasticsearch", 클러스터 이름이 같으면 노드들이 동일한 클러스터로 구성된다.
+node.master  | 마스터 노드 여부  |                        
 
 
-* elasticsearch.yml 변수 수정
+* elasticsearch.yml 설정
 ```
 sudo vi elasticsearch.yml
 ```
 ```
 cluster.name: elasticsearch-colaboy
 node.name: colaboy-node-1
+node.master: true
 ```
 
 * 서비스 재시작
