@@ -172,9 +172,6 @@ drwxrwxr-x 9 root          syslog        4096 Jul 23 16:07 ../
 ```
 
 * elasticsearch.yml 변수 
- 
-<div style="font-size: 14px;">
-
 변수명                    | 명칭                  | 설명   
 ------------------------- | --------------------- | ----------------------------
 cluster.name              | 클러스터 이름         | 기본값은 elasticsearch<br/>클러스터 이름이 같으면 노드들이 동일한 클러스터로 구성된다.
@@ -183,8 +180,6 @@ node.master               | 마스터 노드<br/>여부  | 기본값은 true<br/
 node.data                 | 데이터 저장<br/>여부  | 기본값은 true<br/>데이터를 저장하지 않는 경우는 전용 마스터 인 경우와 노드에서 데이터를<br/>가져와 결과를 집계하는 데에만 사용되는 경우다.<br/>후자의 경우는 검색 부하 분산 장치로 작동한다.
 index.number_of_shards    |                       |
 index.number_of_replicas  |                       |
-
-</div>
 
 * elasticsearch.yml 설정
 ```
