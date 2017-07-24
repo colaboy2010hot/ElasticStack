@@ -185,8 +185,8 @@ node.master  | 마스터 노드 여부  |
 sudo vi elasticsearch.yml
 ```
 ```
-cluster.name: elasticsearch-colaboy
-node.name: colaboy-node-1
+cluster.name: colaboy-elasticsearch
+node.name: COLABOY-UBUNTU1
 node.master: true
 ```
 
@@ -201,8 +201,8 @@ curl localhost:9200
 ```
 ```
 {
-  "name" : "colaboy-node-1",
-  "cluster_name" : "elasticsearch-colaboy",
+  "name" : "COLABOY-UBUNTU1",
+  "cluster_name" : "colaboy-elasticsearch",
   "cluster_uuid" : "NbDRS5OKQBmDrkdGfSWgig",
   "version" : {
     "number" : "5.5.0",
