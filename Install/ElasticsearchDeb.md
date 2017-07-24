@@ -100,6 +100,7 @@ sudo systemctl restart elasticsearch.service
 ```
 sudo systemctl status elasticsearch.service
 ```
+
 ```
 ● elasticsearch.service - Elasticsearch
    Loaded: loaded (/usr/lib/systemd/system/elasticsearch.service; enabled; vendor preset: enabled)
