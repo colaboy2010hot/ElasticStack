@@ -180,23 +180,29 @@ cluster.name              | 클러스터 이름         | 기본값은 elasticse
 node.name                 | 노드(서버) 이름       | 기본값은 Droplet 호스트명으로 자동으로 설정
 node.master               | 마스터 노드<br/>여부  | 기본값은 true<br/>마스터 서버는 클러스터 상태 및 안정성을 담당한다. <br/>많은 클러스터 노드가 있는 대규모 배포에서는 둘 이상의 전용 마스터를<br/>사용하는 것이 좋다.<br/>일반적으로 전용 마스터는 데이터를 저장하거나 인덱스를 만들지 않고,<br/>클러스터의 성능을 위험에 빠뜨릴 수 있는 과부하가 없어야 한다.<br/>슬레이브 서버는 데이터 작업을 로드 할 수 있는 작업 도구로 사용된다.<br/>슬레이브 노드도 추가 노드를 수행할 다른 노드가 있다면, 과부하가<br/>없어야 한다.
 node.data                 | 데이터 저장<br/>여부  | 기본값은 true<br/>데이터를 저장하지 않는 경우는 전용 마스터 인 경우와 노드에서 데이터를<br/>가져와 결과를 집계하는 데에만 사용되는 경우다.<br/>후자의 경우는 검색 부하 분산 장치로 작동한다.
-index.number_of_shards    |                       |
-index.number_of_replicas  |                       |
+index.number_of_shards    | 샤드 수               | 기본값은 5<br/>샤드를 많이 추가하면 인덱싱 성능이 향상된다.
+index.number_of_replicas  | 복제 수               | 기본값은 1<br/>복제본을 많이 만들면 검색 속도가 빨라진다.
+path.data                 | 데이터 저장 경로      | 기본값은 /var/lib/elasticsearch<br/>프로덕션 환경에서는 별도의 파티션으로 셜정하는 것이 좋다.
 
 * elasticsearch.yml 설정
 ```
-sudo vi elasticsearch.yml
+sudo vi /etc/elasticsearch/elasticsearch.yml
 ```
 ```
 cluster.name: colaboy-elasticsearch
+
 node.name: COLABOY-UBUNTU1
 node.master: true
 node.data: true
+
+index.number_of_shards: 5
+index.number_of_replicas: 1
+
 ```
 
 * 서비스 재시작
 ```
-systemctl restart elasticsearch.service
+sudo systemctl restart elasticsearch.service
 ```
 
 * 서비스 확인
