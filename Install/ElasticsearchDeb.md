@@ -302,7 +302,7 @@ sudo systemctl restart elasticsearch
 
 * 서비스 확인
 ```
-curl localhost:9200
+curl 10.0.75.111:9200
 ```
 ```
 {
