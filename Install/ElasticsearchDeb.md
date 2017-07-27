@@ -228,7 +228,7 @@ node.name: COLABOY-UBUNTU1
 #
 # Lock the memory on startup:
 #
-bootstrap.memory_lock: true
+#bootstrap.memory_lock: true
 #
 # Make sure that the heap size is set to about half the memory available
 # on the system and that the owner of the process is allowed to use this
