@@ -32,6 +32,8 @@
             this.btnIndexForeignLanguage = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tbArtCollecetion = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.termArtCollecetion = new System.Windows.Forms.TextBox();
             this.btnCreateClientArtCollecetion = new System.Windows.Forms.Button();
             this.txtArtCollecetionResult = new System.Windows.Forms.TextBox();
             this.txtCollectionIndex = new System.Windows.Forms.TextBox();
@@ -39,16 +41,14 @@
             this.txtCollectionUri = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tpForeignLanguage = new System.Windows.Forms.TabPage();
+            this.resultForeignLanguage = new System.Windows.Forms.TextBox();
+            this.termForeignLanguage = new System.Windows.Forms.TextBox();
             this.btnCreateClientForeignLanguage = new System.Windows.Forms.Button();
             this.txtForeignLanguageResult = new System.Windows.Forms.TextBox();
             this.txtLanuageIndex = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtLanuageUri = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.termArtCollecetion = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.termForeignLanguage = new System.Windows.Forms.TextBox();
-            this.resultForeignLanguage = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tbArtCollecetion.SuspendLayout();
             this.tpForeignLanguage.SuspendLayout();
@@ -104,6 +104,25 @@
             this.tbArtCollecetion.Text = "서울시립미술관 소장품 정보";
             this.tbArtCollecetion.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(15, 367);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(925, 234);
+            this.textBox1.TabIndex = 8;
+            // 
+            // termArtCollecetion
+            // 
+            this.termArtCollecetion.Location = new System.Drawing.Point(15, 331);
+            this.termArtCollecetion.Name = "termArtCollecetion";
+            this.termArtCollecetion.Size = new System.Drawing.Size(200, 21);
+            this.termArtCollecetion.TabIndex = 7;
+            // 
             // btnCreateClientArtCollecetion
             // 
             this.btnCreateClientArtCollecetion.Location = new System.Drawing.Point(364, 12);
@@ -148,7 +167,7 @@
             this.txtCollectionUri.Name = "txtCollectionUri";
             this.txtCollectionUri.Size = new System.Drawing.Size(200, 21);
             this.txtCollectionUri.TabIndex = 2;
-            this.txtCollectionUri.Text = "http://localhost:9200";
+            this.txtCollectionUri.Text = "http://10.0.75.1:9200";
             // 
             // label1
             // 
@@ -177,6 +196,26 @@
             this.tpForeignLanguage.TabIndex = 1;
             this.tpForeignLanguage.Text = "서울시 외국어 표기 정보";
             this.tpForeignLanguage.UseVisualStyleBackColor = true;
+            // 
+            // resultForeignLanguage
+            // 
+            this.resultForeignLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resultForeignLanguage.Location = new System.Drawing.Point(15, 367);
+            this.resultForeignLanguage.Multiline = true;
+            this.resultForeignLanguage.Name = "resultForeignLanguage";
+            this.resultForeignLanguage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.resultForeignLanguage.Size = new System.Drawing.Size(925, 234);
+            this.resultForeignLanguage.TabIndex = 12;
+            // 
+            // termForeignLanguage
+            // 
+            this.termForeignLanguage.Location = new System.Drawing.Point(15, 331);
+            this.termForeignLanguage.Name = "termForeignLanguage";
+            this.termForeignLanguage.Size = new System.Drawing.Size(200, 21);
+            this.termForeignLanguage.TabIndex = 11;
+            this.termForeignLanguage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.termForeignLanguage_KeyUp);
             // 
             // btnCreateClientForeignLanguage
             // 
@@ -222,7 +261,7 @@
             this.txtLanuageUri.Name = "txtLanuageUri";
             this.txtLanuageUri.Size = new System.Drawing.Size(200, 21);
             this.txtLanuageUri.TabIndex = 6;
-            this.txtLanuageUri.Text = "http://localhost:9200";
+            this.txtLanuageUri.Text = "http://10.0.75.1:9200";
             // 
             // label4
             // 
@@ -232,45 +271,6 @@
             this.label4.Size = new System.Drawing.Size(109, 12);
             this.label4.TabIndex = 5;
             this.label4.Text = "Elasticsearch URI:";
-            // 
-            // termArtCollecetion
-            // 
-            this.termArtCollecetion.Location = new System.Drawing.Point(15, 331);
-            this.termArtCollecetion.Name = "termArtCollecetion";
-            this.termArtCollecetion.Size = new System.Drawing.Size(200, 21);
-            this.termArtCollecetion.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(15, 367);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(925, 234);
-            this.textBox1.TabIndex = 8;
-            // 
-            // termForeignLanguage
-            // 
-            this.termForeignLanguage.Location = new System.Drawing.Point(15, 331);
-            this.termForeignLanguage.Name = "termForeignLanguage";
-            this.termForeignLanguage.Size = new System.Drawing.Size(200, 21);
-            this.termForeignLanguage.TabIndex = 11;
-            this.termForeignLanguage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.termForeignLanguage_KeyUp);
-            // 
-            // resultForeignLanguage
-            // 
-            this.resultForeignLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resultForeignLanguage.Location = new System.Drawing.Point(15, 367);
-            this.resultForeignLanguage.Multiline = true;
-            this.resultForeignLanguage.Name = "resultForeignLanguage";
-            this.resultForeignLanguage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.resultForeignLanguage.Size = new System.Drawing.Size(925, 234);
-            this.resultForeignLanguage.TabIndex = 12;
             // 
             // MainForm
             // 
