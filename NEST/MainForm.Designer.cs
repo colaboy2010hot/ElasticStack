@@ -150,7 +150,7 @@
             this.txtCollectionIndex.Name = "txtCollectionIndex";
             this.txtCollectionIndex.Size = new System.Drawing.Size(200, 21);
             this.txtCollectionIndex.TabIndex = 4;
-            this.txtCollectionIndex.Text = "seoul_art_collection";
+            this.txtCollectionIndex.Text = "art_collection";
             // 
             // label2
             // 

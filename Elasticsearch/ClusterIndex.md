@@ -105,3 +105,17 @@ DELETE /customer
 }
 ```
 
+* 클러스터 복제 설정
+```
+POST /_cluster/reroute
+{
+    "commands" : [
+        {
+          "allocate_replica" : {
+                "index" : "art_collection", "shard" : 0,
+                "node" : "COLABOY-UBUNTU1"
+          }
+        }
+    ]
+}
+```
