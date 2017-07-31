@@ -119,3 +119,8 @@ POST /_cluster/reroute
     ]
 }
 ```
+
+* 샤드 상태 확인
+```
+GET /_cat/shards?v
+```

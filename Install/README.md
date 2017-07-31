@@ -4,5 +4,6 @@
 * [Elasticsearch 설치](https://github.com/colaboy2010hot/ElasticStack/blob/master/Install/Elasticsearch.md)
 * [Elasticsearch(Debian package) 설치 ](https://github.com/colaboy2010hot/ElasticStack/blob/master/Install/ElasticsearchDeb.md)
 * [Kibana 설치](https://github.com/colaboy2010hot/ElasticStack/blob/master/Install/Kibana.md)
+* [Kibana(Debian package) 설치 ](https://github.com/colaboy2010hot/ElasticStack/blob/master/Install/KibanaDeb.md)
 * [Logstash 설치](https://github.com/colaboy2010hot/ElasticStack/blob/master/Install/Logstash.md)
 * [Kibana 인증 설정 with nginx](https://github.com/colaboy2010hot/ElasticStack/blob/master/Install/kibanaNginx.md)

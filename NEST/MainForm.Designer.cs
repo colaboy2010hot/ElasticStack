@@ -167,7 +167,7 @@
             this.txtCollectionUri.Name = "txtCollectionUri";
             this.txtCollectionUri.Size = new System.Drawing.Size(200, 21);
             this.txtCollectionUri.TabIndex = 2;
-            this.txtCollectionUri.Text = "http://10.0.75.1:9200";
+            this.txtCollectionUri.Text = "http://10.0.75.111:9200/";
             // 
             // label1
             // 
@@ -261,7 +261,7 @@
             this.txtLanuageUri.Name = "txtLanuageUri";
             this.txtLanuageUri.Size = new System.Drawing.Size(200, 21);
             this.txtLanuageUri.TabIndex = 6;
-            this.txtLanuageUri.Text = "http://10.0.75.1:9200";
+            this.txtLanuageUri.Text = "http://10.0.75.111:9200/";
             // 
             // label4
             // 
