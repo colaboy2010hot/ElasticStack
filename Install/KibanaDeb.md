@@ -21,3 +21,8 @@ wget https://artifacts.elastic.co/downloads/kibana/kibana-5.5.0-amd64.deb
 ```
 sudo dpkg -i kibana-5.5.0-amd64.deb
 ```
+
+* kibana.yml 설정 (ubuntu)
+```
+sudo vi /etc/kibana/kibana.yml
+```
