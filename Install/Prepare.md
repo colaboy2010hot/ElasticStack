@@ -24,7 +24,7 @@ sudo chown -R colaboy:colaboy /var/log/nginx /usr/share/nginx/html
 echo "<h1>Hello World</h1>" > /usr/share/nginx/html/hello.html
 ```
 
-### Oracle Java 1.8 설치 (또는 Open Java 1.8)
+### Oracle Java 1.8 설치
 
 * Java 1.8 설치
 ```
@@ -45,6 +45,22 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)
 
 ```
 
+### Open Java 1.8 설치
+
+* Java 1.8 설치
+```
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+```
+
+* Java 버전 확인
+```
+java -version
+```
+
+```
+```
 ### 시스템 제한 설정
 
 * 시스템 제한 확인
