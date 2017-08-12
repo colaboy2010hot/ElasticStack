@@ -42,7 +42,6 @@ java -version
 java version "1.8.0_131"
 Java(TM) SE Runtime Environment (build 1.8.0_131-b11)
 Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)
-
 ```
 
 ### Open Java 1.8 설치
@@ -62,7 +61,6 @@ java -version
 openjdk version "1.8.0_131"
 OpenJDK Runtime Environment (build 1.8.0_131-8u131-b11-2ubuntu1.16.04.3-b11)
 OpenJDK 64-Bit Server VM (build 25.131-b11, mixed mode)
-
 ```
 
 ### 시스템 제한 설정
