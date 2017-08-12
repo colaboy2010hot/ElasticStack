@@ -58,9 +58,13 @@ sudo apt-get install openjdk-8-jdk
 ```
 java -version
 ```
+```
+openjdk version "1.8.0_131"
+OpenJDK Runtime Environment (build 1.8.0_131-8u131-b11-2ubuntu1.16.04.3-b11)
+OpenJDK 64-Bit Server VM (build 25.131-b11, mixed mode)
 
 ```
-```
+
 ### 시스템 제한 설정
 
 * 시스템 제한 확인
