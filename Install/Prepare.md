@@ -96,10 +96,8 @@ file locks                      (-x) unlimited
 sudo vi /etc/security/limits.conf
 ```
 ```
-colaboy hard nofile 65536
-colaboy soft nofile 65536
-colaboy hard nproc 65536
-colaboy soft nproc 65536
+elasticsearch - nofile 65536
+elasticsearch - nproc 65536
 ```
 
 * 시작 실행 파일 설정
