@@ -2,15 +2,27 @@
 
 ### Elasticsearch 설치
 
- * Elastic 디렉터리로 이동
+
+* 관리자 권한으로 전환
 ```
-cd ~/elastic
+sudo su
+```
+ 
+* 루트 경로로 이동
+```
+cd /
 ```
 
-* 패키지 색인 업데이트
+* elastic 디렉터리 생성
 ```
-sudo apt-get update
+mkdir elastic
 ```
+
+* Elastic 디렉터리로 이동
+```
+cd /elastic
+```
+
 
 * Elasticsearch 5.5.0 다운로드
 ```
@@ -21,6 +33,25 @@ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.0.de
 ```
 sudo dpkg -i elasticsearch-5.5.0.deb
 ```
+
+#### [Install Elasticsearch with Debian Package](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/deb.html)
+
+<br/><br/><br/><br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * 사용자 소속 그룹 확인
 ```
