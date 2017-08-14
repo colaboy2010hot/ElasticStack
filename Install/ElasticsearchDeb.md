@@ -1,6 +1,6 @@
 ﻿## [Elastic Stack](https://github.com/colaboy2010hot/ElasticStack/blob/master/README.md) > [Elastic Stack 설치](https://github.com/colaboy2010hot/ElasticStack/blob/master/Install/README.md) > Elasticsearch(Debian package) 설치
 
-### Elasticsearch 설치
+### [Install Elasticsearch with Debian Package](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/deb.html)
 
 
 * 관리자 권한으로 전환
@@ -34,7 +34,7 @@ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.0.de
 sudo dpkg -i elasticsearch-5.5.0.deb
 ```
 
-#### [Install Elasticsearch with Debian Package](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/deb.html)
+
 
 <br/><br/><br/><br/>
 
