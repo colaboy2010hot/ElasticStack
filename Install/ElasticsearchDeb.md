@@ -3,26 +3,13 @@
 #### [Install Elasticsearch with Debian Package](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/deb.html)
 
 
-* 관리자 권한으로 전환
+* 관리자 권한 전환 및 다운로드 디렉터리 생성
 ```
 sudo su
-```
- 
-* 루트 경로로 이동
-```
 cd /
-```
-
-* elastic 디렉터리 생성
-```
 mkdir elastic
-```
-
-* Elastic 디렉터리로 이동
-```
 cd /elastic
 ```
-
 
 * Elasticsearch 5.5.0 다운로드
 ```
