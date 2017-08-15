@@ -118,6 +118,17 @@ sudo chown -R elasticsearch:elasticsearch /usr/local/lib/MeCab.jar
 sudo chown -R elasticsearch:elasticsearch /usr/local/lib/*mecab*
 ```
 
+### JVM options 설정
+
+```
+sudo vi /etc/elasticsearch/jvm.options
+```
+* 라이브러리 경로 추가
+```
+-Djava.library.path=/usr/local/lib
+```
+
+
 ### elasticsearch-analysis-mecab-ko 플러그인 설치
 ```
 cd /elastic
