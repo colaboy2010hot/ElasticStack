@@ -13,3 +13,17 @@ cd /elastic
 sudo apt-get install g++
 sudo apt-get install make
 ```
+
+* mecab-ko 라이브러리 설치
+* 설치 위치: /usr/local/lib/
+```
+cd /elastic
+wget https://bitbucket.org/eunjeon/mecab-ko/downloads/mecab-0.996-ko-0.9.2.tar.gz
+tar -xvzf mecab-0.996-ko-0.9.2.tar.gz
+cd mecab-0.996-ko-0.9.2
+./configure
+make
+make check
+sudo make install
+sudo ldconfig
+```
