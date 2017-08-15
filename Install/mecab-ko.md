@@ -69,6 +69,9 @@ cd /elastic
 wget https://bitbucket.org/eunjeon/mecab-java/downloads/mecab-java-0.996.tar.gz
 tar zxvf mecab-java-0.996.tar.gz
 cd mecab-java-0.996
+```
+* Makefile 수정
+```
 vi Makefile
 ```
 
@@ -84,9 +87,6 @@ sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install file:///elastic/e
 sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install https://bitbucket.org/eunjeon/mecab-ko-lucene-analyzer/issues/attachments/9/eunjeon/mecab-ko-lucene-analyzer/1500357175.91/9/elasticsearch-analysis-mecab-ko-5.5.0.0.zip
 ```
 
-* mecab-java 재 컴파일
-```
-```
 
 * [참고 1](http://www.popit.kr/%EC%9D%80%EC%A0%84%ED%95%9C%EB%8B%A2-%EC%84%A4%EC%B9%98-%EC%99%84%EC%A0%84%EC%A0%95%EB%B3%B5/)
 * [참고 2](http://guruble.com/?p=416)
