@@ -108,6 +108,7 @@ cluster.name: elasticsearch
 node.name: ubuntu1
 bootstrap.memory_lock: true
 network.host: 10.0.75.111
+discovery.zen.ping.unicast.hosts: ["10.0.75.112"]
 ```
 
 * systemd 설정
@@ -122,6 +123,7 @@ LimitMEMLOCK=infinity
 ```
 sudo ufw enable
 sudo ufw allow 9200/tcp
+sudo ufw allow 9300/tcp
 ```
 
 * 서비스 재시작
