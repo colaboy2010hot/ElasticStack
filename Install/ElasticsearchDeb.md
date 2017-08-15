@@ -104,117 +104,23 @@ node.data                 | 데이터 저장<br/>여부  | 기본값은 true<br/
 sudo vi /etc/elasticsearch/elasticsearch.yml
 ```
 ```
-# ======================== Elasticsearch Configuration =========================
-#
-# NOTE: Elasticsearch comes with reasonable defaults for most settings.
-#       Before you set out to tweak and tune the configuration, make sure you
-#       understand what are you trying to accomplish and the consequences.
-#
-# The primary way of configuring a node is via this file. This template lists
-# the most important settings you may want to configure for a production cluster.
-#
-# Please consult the documentation for further information on configuration options:
-# https://www.elastic.co/guide/en/elasticsearch/reference/index.html
-#
-# ---------------------------------- Cluster -----------------------------------
-#
-# Use a descriptive name for your cluster:
-#
-cluster.name: colaboy-elasticsearch
-#
-# ------------------------------------ Node ------------------------------------
-#
-# Use a descriptive name for the node:
-#
-node.name: COLABOY-UBUNTU1
-#
-# Add custom attributes to the node:
-#
-#node.attr.rack: r1
-#
-# ----------------------------------- Paths ------------------------------------
-#
-# Path to directory where to store the data (separate multiple locations by comma):
-#
-#path.data: /path/to/data
-#
-# Path to log files:
-#
-#path.logs: /path/to/logs
-#
-# ----------------------------------- Memory -----------------------------------
-#
-# Lock the memory on startup:
-#
-#bootstrap.memory_lock: true
-#
-# Make sure that the heap size is set to about half the memory available
-# on the system and that the owner of the process is allowed to use this
-# limit.
-#
-# Elasticsearch performs poorly when the system is swapping the memory.
-#
-# ---------------------------------- Network -----------------------------------
-#
-# Set the bind address to a specific IP (IPv4 or IPv6):
-#
-network.host: 10.0.75.111
-#
-# Set a custom port for HTTP:
-#
-#http.port: 9200
-#
-# For more information, consult the network module documentation.
-#
-# --------------------------------- Discovery ----------------------------------
-#
-# Pass an initial list of hosts to perform discovery when new node is started:
-# The default list of hosts is ["127.0.0.1", "[::1]"]
-#
-discovery.zen.ping.unicast.hosts: ["10.0.75.1"]
-#
-# Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1):
-#
-#discovery.zen.minimum_master_nodes: 3
-#
-# For more information, consult the zen discovery module documentation.
-#
-# ---------------------------------- Gateway -----------------------------------
-#
-# Block initial recovery after a full cluster restart until N nodes are started:
-#
-#gateway.recover_after_nodes: 3
-#
-# For more information, consult the gateway module documentation.
-#
-# ---------------------------------- Various -----------------------------------
-#
-# Require explicit names when deleting indices:
-#
-#action.destructive_requires_name: true
-```
-
-* elasticsearch.yml 설정 (windows)
-```
+cluster.name: elasticsearch
+node.name: ubuntu1
 bootstrap.memory_lock: true
-cluster.name: colaboy-elasticsearch
-discovery.zen.ping.unicast.hosts:
-  - 10.0.75.111:9300
-http.port: 9200
-network.host: 10.0.75.1
-node.data: true
-node.ingest: true
-node.master: true
-node.max_local_storage_nodes: 1
-node.name: COLABOY-NOTE
-path.data: C:\Elastic\Elasticsearch\data
-path.logs: C:\Elastic\Elasticsearch\logs
-transport.tcp.port: 9300
+network.host: 10.0.75.111
+```
 
+* systemd 설정
+```
+sudo vi /usr/lib/systemd/system/elasticsearch.service
+```
+```
+LimitMEMLOCK=infinity
 ```
 
 * 서비스 재시작
 ```
+sudo systemctl daemon-reload
 sudo systemctl restart elasticsearch
 ```
 
