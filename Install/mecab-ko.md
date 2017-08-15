@@ -14,7 +14,7 @@ sudo apt-get install g++
 sudo apt-get install make
 ```
 
-* mecab-ko 라이브러리 설치
+#### mecab-ko 라이브러리 설치
 * 설치 위치: /usr/local/lib/
 ```
 cd /elastic
@@ -27,8 +27,15 @@ make check
 sudo make install
 sudo ldconfig
 ```
+* 설치 확인
+```
+mecab --version
+```
+```
+mecab of 0.996/ko-0.9.2
+```
 
-* mecab-ko-dic 사전 설치
+#### mecab-ko-dic 사전 설치
 * 설치 위치: /usr/local/lib/mecab/dic/mecab-ko-dic
 ```
 cd /elastic
@@ -39,8 +46,34 @@ cd mecab-ko-dic-2.0.1-20150920
 make
 sudo make install
 ```
+* 사전 확인
+```
+mecab -d /usr/local/lib/mecab/dic/mecab-ko-dic
+아버지가 방에 들어가신다.
+```
+```
+아버지  NNG,*,F,아버지,*,*,*,*
+가      JKS,*,F,가,*,*,*,*
+방      NNG,*,T,방,*,*,*,*
+에      JKB,*,F,에,*,*,*,*
+들어가  VV,*,F,들어가,*,*,*,*
+신다    EP+EF,*,F,신다,Inflect,EP,EF,시/EP/*+ᆫ다/EF/*
+.       SF,*,*,*,*,*,*,*
+EOS
+```
 
-* analysis-mecab-ko 플러그인 설치
+#### mecab-java 설치
+
+```
+cd /elastic
+wget https://bitbucket.org/eunjeon/mecab-java/downloads/mecab-java-0.996.tar.gz
+tar zxvf mecab-java-0.996.tar.gz
+cd mecab-java-0.996
+vi Makefile
+```
+
+
+#### elasticsearch-analysis-mecab-ko 플러그인 설치
 ```
 cd /elastic
 wget https://bitbucket.org/eunjeon/mecab-ko-lucene-analyzer/issues/attachments/9/eunjeon/mecab-ko-lucene-analyzer/1500357175.91/9/elasticsearch-analysis-mecab-ko-5.5.0.0.zip
