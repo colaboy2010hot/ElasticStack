@@ -39,3 +39,14 @@ cd mecab-ko-dic-2.0.1-20150920
 make
 sudo make install
 ```
+
+* analysis-mecab-ko 플러그인 설치
+```
+cd /elastic
+wget https://bitbucket.org/eunjeon/mecab-ko-lucene-analyzer/issues/attachments/9/eunjeon/mecab-ko-lucene-analyzer/1500357175.91/9/elasticsearch-analysis-mecab-ko-5.5.0.0.zip
+sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install file:///elastic/elasticsearch-analysis-mecab-ko-5.5.0.0.zip
+```
+* 또는
+```
+sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install https://bitbucket.org/eunjeon/mecab-ko-lucene-analyzer/issues/attachments/9/eunjeon/mecab-ko-lucene-analyzer/1500357175.91/9/elasticsearch-analysis-mecab-ko-5.5.0.0.zip
+```
