@@ -189,5 +189,41 @@ GET /seunjeon-idx/_analyze
 }
 ```
 
+* 인덱스 생성 및 매핑
+```
+PUT /seoul_art_collection/?pretty
+{
+  "settings" : {
+    "index":{
+      "analysis":{
+        "analyzer":{
+          "korean":{
+            "type":"custom",
+            "tokenizer":"seunjeon_default_tokenizer"
+          }
+        },
+        "tokenizer": {
+          "seunjeon_default_tokenizer": {
+            "type": "mecab_ko_standard_tokenizer",
+            "mecab_args": "/usr/local/lib/mecab/dic/mecab-ko-dic"
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "artcollecetion": {
+      "properties": {
+        "caption": {
+          "type": "text",
+          "analyzer": "korean", 
+          "search_analyzer": "korean" 
+        }
+      }
+    }
+  }
+}
+```
+
 * [참고 1](http://www.popit.kr/%EC%9D%80%EC%A0%84%ED%95%9C%EB%8B%A2-%EC%84%A4%EC%B9%98-%EC%99%84%EC%A0%84%EC%A0%95%EB%B3%B5/)
 * [참고 2](http://guruble.com/?p=416)
