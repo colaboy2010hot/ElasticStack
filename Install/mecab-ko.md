@@ -46,7 +46,7 @@ cd mecab-ko-dic-2.0.1-20150920
 make
 sudo make install
 ```
-* 사전 확인
+* 형태소 분석 테스트
 ```
 mecab -d /usr/local/lib/mecab/dic/mecab-ko-dic
 아버지가 방에 들어가신다.
@@ -72,9 +72,51 @@ cd mecab-java-0.996
 ```
 * Makefile 수정
 ```
-vi Makefile
+sudo vi Makefile
 ```
+* 수정된 내용
+```
+TARGET=MeCab
+JAVAC=javac
+JAVA=java
+JAR=jar
+CXX=c++
+INCLUDE=/usr/lib/jvm/java-8-openjdk-amd64/include
 
+PACKAGE=org/chasen/mecab
+
+LIBS=`mecab-config --libs`
+INC=`mecab-config --cflags` -I$(INCLUDE) -I$(INCLUDE)/linux
+
+all:
+        $(CXX) -O1 -c -fpic $(TARGET)_wrap.cxx  $(INC)
+        $(CXX) -shared  $(TARGET)_wrap.o -o lib$(TARGET).so $(LIBS)
+        $(JAVAC) $(PACKAGE)/*.java
+        $(JAVAC) -cp . test.java
+        $(JAR) cfv $(TARGET).jar $(PACKAGE)/*.class
+
+test:
+        env LD_LIBRARY_PATH=. $(JAVA) test
+
+clean:
+        rm -fr *.jar *.o *.so *.class $(PACKAGE)/*.class
+
+cleanall:
+        rm -fr $(TARGET).java *.cxx
+```
+* 빌드
+```
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
+make
+```
+* 라이브러리 복사, 소유자 및 그룹 수정
+```
+sudo cp libMeCab.so /usr/local/lib
+sudo cp MeCab.jar /usr/local/lib
+sudo chown -R elasticsearch:elasticsearch /usr/local/lib/libMeCab.so
+sudo chown -R elasticsearch:elasticsearch /usr/local/lib/MeCab.jar
+sudo chown -R elasticsearch:elasticsearch /usr/local/lib/*mecab*
+```
 
 ### elasticsearch-analysis-mecab-ko 플러그인 설치
 ```
