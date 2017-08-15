@@ -118,6 +118,12 @@ sudo vi /usr/lib/systemd/system/elasticsearch.service
 LimitMEMLOCK=infinity
 ```
 
+* 방화벽 설정
+```
+sudo ufw enable
+sudo ufw allow 9200/tcp
+```
+
 * 서비스 재시작
 ```
 sudo systemctl daemon-reload
