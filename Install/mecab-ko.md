@@ -27,3 +27,15 @@ make check
 sudo make install
 sudo ldconfig
 ```
+
+* mecab-ko-dic 사전 설치
+* 설치 위치: /usr/local/lib/mecab/dic/mecab-ko-dic
+```
+cd /elastic
+wget https://bitbucket.org/eunjeon/mecab-ko-dic/downloads/mecab-ko-dic-2.0.1-20150920.tar.gz
+tar -xvzf mecab-ko-dic-2.0.1-20150920.tar.gz  
+cd mecab-ko-dic-2.0.1-20150920
+./configure
+make
+sudo make install
+```
