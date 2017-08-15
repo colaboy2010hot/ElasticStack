@@ -14,7 +14,7 @@ sudo apt-get install g++
 sudo apt-get install make
 ```
 
-#### mecab-ko 라이브러리 설치
+### mecab-ko 라이브러리 설치
 * 설치 위치: /usr/local/lib/
 ```
 cd /elastic
@@ -35,7 +35,7 @@ mecab --version
 mecab of 0.996/ko-0.9.2
 ```
 
-#### mecab-ko-dic 사전 설치
+### mecab-ko-dic 사전 설치
 * 설치 위치: /usr/local/lib/mecab/dic/mecab-ko-dic
 ```
 cd /elastic
@@ -62,7 +62,7 @@ mecab -d /usr/local/lib/mecab/dic/mecab-ko-dic
 EOS
 ```
 
-#### mecab-java 설치
+### mecab-java 설치
 
 ```
 cd /elastic
@@ -73,7 +73,7 @@ vi Makefile
 ```
 
 
-#### elasticsearch-analysis-mecab-ko 플러그인 설치
+### elasticsearch-analysis-mecab-ko 플러그인 설치
 ```
 cd /elastic
 wget https://bitbucket.org/eunjeon/mecab-ko-lucene-analyzer/issues/attachments/9/eunjeon/mecab-ko-lucene-analyzer/1500357175.91/9/elasticsearch-analysis-mecab-ko-5.5.0.0.zip
