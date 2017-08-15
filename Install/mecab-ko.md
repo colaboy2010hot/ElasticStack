@@ -118,7 +118,7 @@ sudo chown -R elasticsearch:elasticsearch /usr/local/lib/MeCab.jar
 sudo chown -R elasticsearch:elasticsearch /usr/local/lib/*mecab*
 ```
 
-### JVM options 설정
+### JVM options 설정 및 라이브러리 경로 설정
 
 ```
 sudo vi /etc/elasticsearch/jvm.options
@@ -127,7 +127,15 @@ sudo vi /etc/elasticsearch/jvm.options
 ```
 -Djava.library.path=/usr/local/lib
 ```
-
+* 라이브러리 경로 설정
+```
+sudo vi /etc/ld.so.conf
+```
+* 라이브러리 경로 추가
+```
+include /etc/ld.so.conf.d/*.conf
+/usr/local/lib
+```
 
 ### elasticsearch-analysis-mecab-ko 플러그인 설치
 ```
@@ -140,6 +148,46 @@ sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install file:///elastic/e
 sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install https://bitbucket.org/eunjeon/mecab-ko-lucene-analyzer/issues/attachments/9/eunjeon/mecab-ko-lucene-analyzer/1500357175.91/9/elasticsearch-analysis-mecab-ko-5.5.0.0.zip
 ```
 
+
+### 형태소 분석기 테스트
+
+* 재시작
+```
+sudo systemctl restart elasticsearch
+```
+
+* 인덱스 생성
+```
+PUT /seunjeon-idx/?pretty
+{
+  "settings" : {
+    "index":{
+      "analysis":{
+        "analyzer":{
+          "korean":{
+            "type":"custom",
+            "tokenizer":"seunjeon_default_tokenizer"
+          }
+        },
+        "tokenizer": {
+          "seunjeon_default_tokenizer": {
+            "type": "mecab_ko_standard_tokenizer",
+            "mecab_args": "/usr/local/lib/mecab/dic/mecab-ko-dic"
+          }
+        }
+      }
+    }
+  }
+}
+```
+* 형태소 분석
+```
+GET /seunjeon-idx/_analyze 
+{
+  "analyzer": "korean", 
+  "text":     "아버지가 방에 들어가신다."
+}
+```
 
 * [참고 1](http://www.popit.kr/%EC%9D%80%EC%A0%84%ED%95%9C%EB%8B%A2-%EC%84%A4%EC%B9%98-%EC%99%84%EC%A0%84%EC%A0%95%EB%B3%B5/)
 * [참고 2](http://guruble.com/?p=416)
