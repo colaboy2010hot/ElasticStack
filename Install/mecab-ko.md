@@ -225,5 +225,30 @@ PUT /seoul_art_collection/?pretty
 }
 ```
 
+* 검색
+```
+POST _search
+{
+   "query": {
+      "match": {
+         "caption" : "찾다"
+      }
+   }
+}
+```
+```
+GET seoul_art_collection/_search
+{
+  "query": {
+    "match": {
+      "caption": {
+        "query": "찾다 살다", 
+        "operator": "or"
+      }
+    }
+  }
+}
+```
+
 * [참고 1](http://www.popit.kr/%EC%9D%80%EC%A0%84%ED%95%9C%EB%8B%A2-%EC%84%A4%EC%B9%98-%EC%99%84%EC%A0%84%EC%A0%95%EB%B3%B5/)
 * [참고 2](http://guruble.com/?p=416)
