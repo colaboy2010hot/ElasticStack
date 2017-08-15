@@ -130,9 +130,9 @@ curl 10.0.75.111:9200
 ```
 ```
 {
-  "name" : "COLABOY-UBUNTU1",
-  "cluster_name" : "colaboy-elasticsearch",
-  "cluster_uuid" : "NbDRS5OKQBmDrkdGfSWgig",
+  "name" : "ubuntu1",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "cLfZ-ylGR7KJc02Aj5vITQ",
   "version" : {
     "number" : "5.5.0",
     "build_hash" : "260387d",
@@ -142,4 +142,5 @@ curl 10.0.75.111:9200
   },
   "tagline" : "You Know, for Search"
 }
+
 ```
