@@ -7,3 +7,9 @@ cd /
 mkdir elastic
 cd /elastic
 ```
+
+* 컴파일러 및 빌드 도구 설치
+```
+sudo apt-get install g++
+sudo apt-get install make
+```
