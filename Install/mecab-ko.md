@@ -217,7 +217,13 @@ PUT /seoul_art_collection/?pretty
         "caption": {
           "type": "text",
           "analyzer": "korean", 
-          "search_analyzer": "korean" 
+          "search_analyzer": "korean",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            } 
         }
       }
     }
