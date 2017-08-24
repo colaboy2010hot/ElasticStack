@@ -14,4 +14,5 @@ namespace NEST
         public string Content { get; set; }
         public Attachment Attachment { get; set; }
     }
+
 }
