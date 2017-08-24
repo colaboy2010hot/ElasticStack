@@ -7,6 +7,7 @@ namespace ElasticStack
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
         }
     }
 }
